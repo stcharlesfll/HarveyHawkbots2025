@@ -1,0 +1,6 @@
+when program starts  # Starting location:  # 3 bold black line right tire in the middle of the 3rd line
+set movement motors to CA
+set 1 motor rotation to 8 inches moved
+set movement speed to 50 %
+move forward for 25 inches
+
