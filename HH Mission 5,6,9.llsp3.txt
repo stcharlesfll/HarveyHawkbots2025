@@ -1,11 +1,23 @@
 when program starts
-set movement motors to AC  # start: 
-set movement speed to 30 %
+set movement motors to AC  # start: right wheel right side next to 10th line from right; arm 90 degrees
+set movement speed to 50 %
 set 1 motor rotation to 19.7 cm moved
-move forward for 28.5 inches
-run Gyro turn 5 30  
+D set speed to 30 %
+D run clockwise for .3 rotations
+move forward for 29.25 inches
+run Gyro turn 5 50 75
+run Gyro turn 0 -10 10
+move back for 6 inches
+stop moving
+run Gyro turn -15 0 24
+move back for 7 inches
+stop moving
+D set speed to 100 %
+D run counterclockwise for .25 rotations
 
 define Gyro turn left wheel speed right wheel speed turn degrees
+set yaw angle to 0
 start moving at left wheel speed right wheel speed % speed
 wait until ((abs of yaw angle) > turn degrees)
+stop moving
 
