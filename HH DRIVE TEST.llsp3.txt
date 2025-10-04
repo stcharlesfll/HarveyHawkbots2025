@@ -1,0 +1,6 @@
+when program starts
+set movement motors to AC
+set movement speed to 30 %
+set 1 motor rotation to 19.7 cm moved
+move forward for 10 inches
+
