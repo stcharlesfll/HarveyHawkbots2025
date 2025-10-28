@@ -1,4 +1,4 @@
-when program starts
+when program starts  # Red home start.  right wheel on 2nd bold line from right.  Go lift the Indiana Jones car and return home.
 set movement motors to AC
 set movement speed to 100 %
 set 1 motor rotation to 19.7 cm moved

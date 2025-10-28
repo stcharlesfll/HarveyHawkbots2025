@@ -1,0 +1,10 @@
+when program starts  # Blue home start.  Crossing to Red.  left wheel on 1st light line above 2rd bold line from top.
+set movement motors to AC
+set movement speed to 50 %
+set 1 motor rotation to 19.7 cm moved
+move forward for 70 inches
+
+define Gryo Turn Left Power Right Power Degree
+
+Left Power
+

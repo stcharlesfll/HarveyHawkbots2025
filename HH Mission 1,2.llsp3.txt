@@ -1,4 +1,4 @@
-when program starts  # start right wheel on the secound bold line from the right side of red home
+when program starts  # Red home start right wheel on the secound bold line from the right side of red home
 set yaw angle to 0
 set movement motors to AC
 set movement motors to 1 at stop
