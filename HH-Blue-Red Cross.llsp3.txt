@@ -1,10 +1,29 @@
 when program starts  # Blue home start.  Crossing to Red.  left wheel on 1st light line above 2rd bold line from top.
 set movement motors to AC
-set movement speed to 50 %
+set movement speed to 100 %
 set 1 motor rotation to 19.7 cm moved
-move forward for 70 inches
+move forward for 60 inches
+run Gryo Turn 5 50 20
+move forward for 10 inches
+set movement speed to 100 %
 
 define Gryo Turn Left Power Right Power Degree
+set yaw angle to 0
+start moving at Left Power Right Power % speed
+wait until ((abs of yaw angle) > Degree)
+stop moving
 
 Left Power
+
+left wheel speed 
+
+right wheel speed 
+
+turn degrees 
+
+move forward for 12 inches
+run Gryo Turn 5 50 90
+move forward for 50 inches
+run Gryo Turn 5 50 35
+move forward for 10 inches
 

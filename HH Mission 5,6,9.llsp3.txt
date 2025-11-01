@@ -1,27 +1,28 @@
 when program starts
-set movement motors to AC  # Blue home start: right wheel right side next to 3rd bold line from right; arm 90 degrees to left
+set movement motors to AC  # Blue home start: right wheel outside next to 3rd bold line   # and 2nd soft line from right
 set movement speed to 50 %
 set 1 motor rotation to 19.7 cm moved
-move forward for 19 inches
-run Gyro turn 5 50 25
-move forward for 10 inches
-run Gyro turn 50 5 50
-B set speed to 30 %  # B= front Hawkbot  # D= front Hawk Red
-B run clockwise for .3 rotations
-run Gyro turn 5 50 75
-B run counterclockwise for .5 rotations
-run Gyro turn 0 -10 10
-move back for 6 inches
-stop moving
-run Gyro turn -15 0 24
+move forward for 28.35 inches
+run Gyro turn 5 50 12
+wait 1 seconds
 move back for 7 inches
-stop moving
-B set speed to 100 %
-B run counterclockwise for .125 rotations
+run Gyro turn 50 5 33.5
+move forward for 2 inches
+B set speed to 50 %
+B run counterclockwise for 115 degrees
+move forward for 2 inches
+B run clockwise for 140 degrees
+move back for 7 inches
+run Gyro turn 5 50 19
+move back for 35 inches
 
 define Gyro turn left wheel speed right wheel speed turn degrees
 set yaw angle to 0
 start moving at left wheel speed right wheel speed % speed
 wait until ((abs of yaw angle) > turn degrees)
 stop moving
+
+wait 3 seconds
+move forward for 22 rotations
+run Gyro turn 5 50 45
 
