@@ -19,11 +19,11 @@ run Gryo Turn 10 50 48  # Turn toward Red Home
 move back for 29 inches
 stop moving
 
+B set speed to 10 %
+B run counterclockwise for .2 rotations
+
 define Gryo Turn left wheel speed right wheel speed turn degrees
 set yaw angle to 0
 start moving at left wheel speed right wheel speed % speed
 wait until ((abs of yaw angle) > turn degrees)
-
-B set speed to 10 %
-B run counterclockwise for .2 rotations
 
