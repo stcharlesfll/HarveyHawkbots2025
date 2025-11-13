@@ -1,0 +1,47 @@
+when program starts  # Blue home start.  Take sight flag to the box
+set yaw angle to 0
+set movement motors to AC
+set movement speed to 50 %
+set 1 motor rotation to 19.7 cm moved
+move forward for 21.75 inches  # forward
+run Gyro Turn No Reset 5 50 -50 <
+move forward for 7.5 inches
+run Gyro Turn No Reset 5 50 -80 <
+stop moving
+move forward for 7.5 inches
+run Gyro Turn No Reset 30 0 0 >  # Score Site Marker Flag
+stop moving
+move back for 2 inches
+run Gyro Turn No Reset -30 0 -45 <
+move back for 9.5 inches  # Score mission 9 Roof
+move forward for 1 inches
+run Gyro Turn No Reset 0 30 -55 <
+move forward for 1 inches
+run Gyro Turn No Reset 30 5 -45 >
+move forward for 1.5 inches
+D set speed to 30 %  # Need to switch back to the original code to score mission 10 first, then pull fwd 2in, turn 25deg, pull fwd 1in turn to 45 degrees then back into mission 9
+D run counterclockwise for .3 rotations
+stop moving
+wait .3 seconds
+D set speed to 30 %
+D run clockwise for .2 rotations
+move forward for 2 inches
+run Gyro Turn No Reset 5 30 -90 <
+stop moving
+move back for 12 inches
+run Gyro Turn No Reset 0 -30 -45 >
+move back for 6 inches
+run Gyro Turn No Reset 0 -30 -30 >
+stop moving
+set movement speed to 100 %
+move back for 24 inches
+stop all
+
+define Gyro Turn No Reset Left Wheel Speed Right Wheel Speed Degree Greater/Less
+start moving at Left Wheel Speed Right Wheel Speed % speed
+if (Greater/Less = >) then
+   wait until (yaw angle > Degree)
+if (Greater/Less = <) then
+   wait until (yaw angle < Degree)
+stop moving
+
