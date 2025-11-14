@@ -1,4 +1,5 @@
 when program starts  # Robot facing mission 4, front of robot on 3rd solid line from mission 4, arm all the way up
+set yaw angle to 0
 set movement motors to AC
 set movement speed to 50 %
 set 1 motor rotation to 19.7 cm moved
@@ -8,15 +9,27 @@ set movement speed to 100 %
 move back for 15 inches
 B run clockwise for 0.7 rotations
 set movement speed to 50 %
-run Gryo Turn 5 50 20  # turn to lift the boat
-move forward for 11 inches
-run Gryo Turn 50 5 15
+run Gyro Turn No Reset 5 50 -25 <  # turn to lift boat
+run Gyro Turn No Reset 5 0 -25 =
+move forward for 13.5 inches
+run Gyro Turn No Reset 50 5 -2 >
+run Gyro Turn No Reset 0 5 -2 =
 set movement speed to 65 %
-move forward for 10.7 inches  # push the pushy to lift ship
+move forward for 10.5 inches  # push the pushy to lift ship
 set movement speed to 100 %
-move back for 5 inches
-run Gryo Turn 5 50 10  # turn back and go home
+move back for 5.5 inches
+run Gyro Turn No Reset -50 0 -30 <
 move back for 20 inches
+
+define Gyro Turn No Reset Left Wheel Speed Right Wheel Speed Degree Greater/Less
+start moving at Left Wheel Speed Right Wheel Speed % speed
+if (Greater/Less = >) then
+   wait until (yaw angle > Degree)
+if (Greater/Less = <) then
+   wait until (yaw angle < Degree)
+if (Greater/Less = =) then
+   wait until (yaw angle = Degree)
+stop moving
 
 define Gryo Turn Left Power Right Power Degree
 set yaw angle to 0
