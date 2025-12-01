@@ -12,10 +12,10 @@ start moving forward
 B set speed to 60 %
 B run clockwise for .5 rotations  # Score Mission 3
 wait .5 seconds
-B set speed to 80 %
-B run clockwise for .2 rotations
+B set speed to 70 %
+B run clockwise for .25 rotations
 wait .5 seconds
-B set speed to 20 %
+B set speed to 15 %
 B run counterclockwise for .32 rotations
 set movement speed to 100 %
 move back for 7.5 inches
