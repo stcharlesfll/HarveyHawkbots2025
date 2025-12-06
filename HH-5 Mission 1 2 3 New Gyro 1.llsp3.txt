@@ -5,15 +5,17 @@ set movement motors to AC
 set movement motors to 1 at stop
 set 1 motor rotation to 19.7 cm moved
 set movement speed to 50 %
-B set speed to 5 %
+run arm zero
+B set speed to 6 %
 B start motor counterclockwise
 move forward for 26 inches
-B set speed to 2 %
-move back for 5 inches
-move forward for 5 inches  # score mission 1 - soil deposit
+move back for 6 inches  # score mission 1 - soil deposit 
+B go to relative position -200 at 15 % speed
 B stop motor
-run Gyro Turn No Reset 0 30 -35 <
-run Gyro Turn No Reset 5 0 -33 =
+run Gyro Turn No Reset 0 60 -28 <
+run Gyro Turn No Reset 5 0 -23 =
+move forward for 1 inches  # score mission 1 - soil deposit
+
 set movement speed to 15 %
 move forward for 1.5 inches  # score mission 2 part 1
 set movement speed to 50 %
@@ -68,4 +70,11 @@ if (Greater/Less = <) then
 if (Greater/Less = =) then
    wait until (yaw angle = Degree)
 stop moving
+
+define arm zero
+B set speed to 10 %
+repeat until F is pressed
+   B start motor clockwise
+B stop motor
+B set relative position to 0
 
