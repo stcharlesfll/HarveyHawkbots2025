@@ -1,41 +1,44 @@
 when program starts
 set yaw angle to 0
-set movement motors to AC  # Blue home start: right wheel outside next to 3rd bold line   # and 2nd soft line from right
+set movement motors to AC  # Blue home start: (with hammer jig) right side of tire next to 3rd bold line   # and 2nd soft line from right
 set movement acceleration to 1000 1000
 set movement speed to 50 %
 set 1 motor rotation to 19.7 cm moved
-move forward for 28.4 inches
+run arm zero
+move forward for 26.4 inches
 run Gyro turn 5 50 -10 <
-run Gyro turn 0 -5 -10 =
+run Gyro turn 0 -5 -10 =  # score mission 5&6
 wait .2 seconds
 move back for 6.8 inches
-run Gyro turn 30 5 31 >
-run Gyro turn 0 2 31 =
-move forward for 1 inches
-B set speed to 60 %
-B run counterclockwise for 135 degrees
+run Gyro turn 30 5 32 >
+run Gyro turn 0 2 32 =
+move forward for 1.7 inches
+B go to relative position -185 at 40 % speed
 wait .2 seconds
-move forward for 2.5 inches
-B set speed to 20 %
-B run clockwise for 190 degrees  # Lift mission 7.
-move back for 5.8 inches
+move forward for 2 inches
+B go to relative position 15 at 20 % speed  # lift mission 7
+move back for 6.3 inches
 run Gyro turn 0 50 -110 <
 run Gyro turn 5 0 -110 =
 move back for 16 inches
 move forward for 8 inches
 run Gyro turn 50 0 -103 >
-run Gyro turn 0 5 -100 =
+run Gyro turn 0 5 -98 =
 move forward for 9 inches
-run Gyro turn 0 50 -88 <
-B set speed to 60 %
-B run counterclockwise for 125 degrees
+B go to relative position -180 at 40 % speed  # score mission 10
 wait .5 seconds
-B run clockwise for 140 degrees
+B set speed to 30 %
+repeat until (F pressure in newton > 1)
+   B start motor clockwise
+B stop motor
 move back for 5 inches
 run Gyro turn 50 0 -35 >
 set movement speed to 100 %
 move back for 32 inches
 stop all
+
+run Gyro turn 0 50 -82 <
+run Gyro turn 5 0 -82 =
 
 define Gyro turn left wheel speed right wheel speed turn degrees >/</=
 start moving at left wheel speed right wheel speed % speed
@@ -46,4 +49,15 @@ if (>/</= = <) then
 if (>/</= = =) then
    wait until (yaw angle = turn degrees)
 stop moving
+
+define arm zero
+B set speed to 10 %
+repeat until F is pressed
+   B start motor clockwise
+B stop motor
+B set relative position to 0
+
+B go to relative position -5 at 60 % speed
+
+F is hardpressed
 
