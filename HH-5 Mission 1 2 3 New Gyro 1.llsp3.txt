@@ -8,58 +8,61 @@ set movement speed to 50 %
 run arm zero
 B set speed to 6 %
 B start motor counterclockwise
-move forward for 26 inches
-move back for 6 inches  # score mission 1 - soil deposit 
+move forward for 25 inches  # SCORE ONE SOIL DEPOSIT 
+run Gyro Turn No Reset 50 0 57 >
+run Gyro Turn No Reset 0 5 57 =  # TURN TOWARD MISSION 3 
 B go to relative position -200 at 15 % speed
 B stop motor
-run Gyro Turn No Reset 0 60 -28 <
-run Gyro Turn No Reset 5 0 -23 =
-move forward for 1 inches  # score mission 1 - soil deposit
-
-set movement speed to 15 %
-move forward for 1.5 inches  # score mission 2 part 1
-set movement speed to 50 %
-move back for 1.2 inches
-B set speed to 40 %
-B run clockwise for .3 rotations
-wait .2 seconds
-run Gyro Turn No Reset 20 0 -23 >
-run Gyro Turn No Reset 0 5 -23 =
-set movement speed to 30 %
-move forward for 1.2 inches
-B set speed to 55 %
-B run counterclockwise for .3 rotations
-B set speed to 3 %
-B start motor counterclockwise
-wait .2 seconds
-move forward for 1.5 inches  # score mission 2 part 2
-B set speed to 50 %
-B run clockwise for .6 rotations
-wait .2 seconds
-run Gyro Turn No Reset -30 0 -73 <
-run Gyro Turn No Reset 0 -5 -73 =  # Turn back towards center of mat
-set movement speed to 30 %
-move back for 5 inches
-run Gyro Turn No Reset 0 -30 -40 >
-run Gyro Turn No Reset 0 5 -40 =  # Turn towards mission 2 part 3
-set movement speed to 50 %
-B set speed to 30 %
-B run counterclockwise for .5 rotations
-move forward for 5.5 inches  # Lift in two steps to keep from getting stuck
-B set speed to 75 %
-B run clockwise for .2 rotations  # Score mission 2 part 3
+move forward for 3 inches
+run Gyro Turn No Reset 5 0 60 =
+move forward for 1.5 inches
+B go to relative position -125 at 20 % speed
 move forward for 1 inches
-B set speed to 75 %
-B run clockwise for .5 rotations  # Lift Out mission 2 part 3
-wait .4 seconds
-B set speed to 3 %
-B start motor clockwise
-run Gyro Turn No Reset 0 -30 10 >
-run Gyro Turn No Reset -5 0 10 =
-set movement speed to 100 %
-move back for 30 inches  # Return to Red home
+B go to relative position -90 at 20 % speed  # LIFTED THE MINESHAFT EXPLORER
+wait 0.5 seconds
+B go to relative position -200 at 20 % speed
+run Gyro Turn No Reset 10 0 70 >
+B go to relative position 10 at 50 % speed
+run arm zero
+run Gyro Turn No Reset -50 0 -56 <  # TURN TOWARDS MISSION 2 MAP REVEAL
+run Gyro Turn No Reset 5 0 -56 =
+move back for 2.5 inches
+B go to relative position -210 at 30 % speed
+B set speed to 2 %
+B start motor counterclockwise
+wait .5 seconds
+set movement speed to 25 %
+move forward for 5 inches
+start moving at 15 0 % speed
+wait .5 seconds
 B stop motor
-stop all
+stop moving  # SCORE SWING MAP REVEAL 
+B go to relative position -150 at 30 % speed
+run Gyro Turn No Reset -5 0 -60 =
+move back for 3 inches
+run Gyro Turn No Reset 5 0 -43 =
+B go to relative position -210 at 30 % speed
+B start motor at 4 % power
+B start motor counterclockwise
+move forward for 4 inches
+B go to relative position -150 at 30 % speed
+move back for 7 inches
+run Gyro Turn No Reset 5 0 -39 =
+B go to relative position -190 at 30 % speed
+wait 0.3 seconds
+move forward for 3 inches
+B go to relative position -100 at 30 % speed
+move forward for 1 inches
+B go to relative position 0 at 30 % speed
+move back for 5 inches
+move forward for 2 inches
+run Gyro Turn No Reset 50 0 60 >
+run Gyro Turn No Reset 0 5 60 =
+move back for 10.5 inches
+run Gyro Turn No Reset 0 10 0 <
+run Gyro Turn No Reset 5 0 0 =
+set movement speed to 50 %
+move back for 26 inches
 
 define Gyro Turn No Reset Left Wheel Speed Right Wheel Speed Degree Greater/Less
 start moving at Left Wheel Speed Right Wheel Speed % speed
@@ -77,4 +80,6 @@ repeat until F is pressed
    B start motor clockwise
 B stop motor
 B set relative position to 0
+
+B go to relative position -150 at 30 % speed
 

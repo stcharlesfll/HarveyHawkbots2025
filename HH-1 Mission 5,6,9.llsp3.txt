@@ -37,9 +37,6 @@ set movement speed to 100 %
 move back for 32 inches
 stop all
 
-run Gyro turn 0 50 -82 <
-run Gyro turn 5 0 -82 =
-
 define Gyro turn left wheel speed right wheel speed turn degrees >/</=
 start moving at left wheel speed right wheel speed % speed
 if (>/</= = >) then
