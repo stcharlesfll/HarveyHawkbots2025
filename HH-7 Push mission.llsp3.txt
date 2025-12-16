@@ -16,6 +16,7 @@ run Gyro turn 50 5 10
 move back for 3 inches
 run Gyro turn 5 50 10
 move back for 26 inches
+stop program
 
 define Gyro turn right power left power degree
 set yaw angle to 0

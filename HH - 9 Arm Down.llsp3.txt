@@ -1,0 +1,13 @@
+when program starts  # Program to zero arm then run it down
+run arm zero
+B go to relative position -200 at 50 % speed
+write RESET
+stop program
+
+define arm zero
+B set speed to 10 %
+repeat until F is pressed
+   B start motor clockwise
+B stop motor
+B set relative position to 0
+

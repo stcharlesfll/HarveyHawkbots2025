@@ -64,6 +64,8 @@ run Gyro Turn No Reset 5 0 0 =
 set movement speed to 50 %
 move back for 26 inches
 
+B go to relative position -150 at 30 % speed
+
 define Gyro Turn No Reset Left Wheel Speed Right Wheel Speed Degree Greater/Less
 start moving at Left Wheel Speed Right Wheel Speed % speed
 if (Greater/Less = >) then
@@ -80,6 +82,4 @@ repeat until F is pressed
    B start motor clockwise
 B stop motor
 B set relative position to 0
-
-B go to relative position -150 at 30 % speed
 

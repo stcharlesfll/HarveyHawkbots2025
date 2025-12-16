@@ -22,6 +22,7 @@ move forward for 5.5 inches
 move back for 10 inches
 run Gryo Turn 5 50 30
 move back for 20 inches
+stop program
 
 define Gyro Turn No Reset Left Wheel Speed Right Wheel Speed Degree Greater/Less
 start moving at Left Wheel Speed Right Wheel Speed % speed
@@ -33,15 +34,15 @@ if (Greater/Less = =) then
    wait until (yaw angle = Degree)
 stop moving
 
+define Gryo Turn Left Power Right Power Degree
+set yaw angle to 0
+start moving at Left Power Right Power % speed
+wait until ((abs of yaw angle) > Degree)
+
 define arm zero
 B set speed to 10 %
 repeat until F is pressed
    B start motor clockwise
 B stop motor
 B set relative position to 0
-
-define Gryo Turn Left Power Right Power Degree
-set yaw angle to 0
-start moving at Left Power Right Power % speed
-wait until ((abs of yaw angle) > Degree)
 
