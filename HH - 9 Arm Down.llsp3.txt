@@ -1,6 +1,7 @@
 when program starts  # Program to zero arm then run it down
 run arm zero
-B go to relative position -200 at 50 % speed
+B set acceleration to 3000 3000
+B go to relative position -210 at 100 % speed
 write RESET
 stop program
 

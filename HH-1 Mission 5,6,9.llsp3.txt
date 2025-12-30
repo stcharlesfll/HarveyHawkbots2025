@@ -39,7 +39,13 @@ stop program
 
 F is hardpressed
 
-define Gyro turn left wheel speed right wheel speed turn degrees >/</=
+define arm zero
+B set speed to 10 %
+repeat until F is pressed
+   B start motor clockwise
+B stop motor
+B set relative position to 0
+
 start moving at left wheel speed right wheel speed % speed
 if (>/</= = >) then
    wait until (yaw angle > turn degrees)
@@ -49,10 +55,14 @@ if (>/</= = =) then
    wait until (yaw angle = turn degrees)
 stop moving
 
-define arm zero
-B set speed to 10 %
-repeat until F is pressed
-   B start motor clockwise
-B stop motor
-B set relative position to 0
+start moving at left wheel speed right wheel speed % speed
+if (>/</= = >) then
+   wait until (yaw angle > turn degrees)
+if (>/</= = <) then
+   wait until (yaw angle < turn degrees)
+if (>/</= = =) then
+   wait until (yaw angle = turn degrees)
+stop moving
+
+define Gyro turn left wheel speed right wheel speed turn degrees >/</=
 

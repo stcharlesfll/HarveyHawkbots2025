@@ -4,24 +4,25 @@ set movement acceleration to 1000 1000
 set movement motors to AC
 set movement motors to 1 at stop
 set 1 motor rotation to 19.7 cm moved
-set movement speed to 50 %
+set movement speed to 100 %
 run arm zero
 B set speed to 6 %
 B start motor counterclockwise
-move forward for 25 inches  # SCORE ONE SOIL DEPOSIT 
-run Gyro Turn No Reset 50 0 57 >
-run Gyro Turn No Reset 0 5 57 =  # TURN TOWARD MISSION 3 
+move forward for 27 inches  # SCORE ONE SOIL DEPOSIT 
+run Gyro Turn No Reset 50 0 67 >
+run Gyro Turn No Reset 0 5 67 =  # TURN TOWARD MISSION 3 
 B go to relative position -200 at 15 % speed
 B stop motor
+set movement speed to 50 %
 move forward for 3 inches
-run Gyro Turn No Reset 5 0 60 =
-move forward for 1.5 inches
 B go to relative position -125 at 20 % speed
-move forward for 1 inches
+move forward for 2 inches
 B go to relative position -90 at 20 % speed  # LIFTED THE MINESHAFT EXPLORER
 wait 0.5 seconds
 B go to relative position -200 at 20 % speed
-run Gyro Turn No Reset 10 0 70 >
+move back for 1 inches
+run Gyro Turn No Reset 10 0 80 >
+run Gyro Turn No Reset 0 5 80 =
 B go to relative position 10 at 50 % speed
 run arm zero
 run Gyro Turn No Reset -50 0 -56 <  # TURN TOWARDS MISSION 2 MAP REVEAL
@@ -37,6 +38,7 @@ start moving at 15 0 % speed
 wait .5 seconds
 B stop motor
 stop moving  # SCORE SWING MAP REVEAL 
+set movement speed to 50 %
 B go to relative position -150 at 30 % speed
 run Gyro Turn No Reset -5 0 -60 =
 move back for 3 inches
@@ -44,27 +46,29 @@ run Gyro Turn No Reset 5 0 -43 =
 B go to relative position -210 at 30 % speed
 B start motor at 4 % power
 B start motor counterclockwise
-move forward for 4 inches
+move forward for 4 inches  # score 2 map reveal 
 B go to relative position -150 at 30 % speed
 move back for 7 inches
 run Gyro Turn No Reset 5 0 -39 =
-B go to relative position -190 at 30 % speed
+B go to relative position -170 at 30 % speed
 wait 0.3 seconds
 move forward for 3 inches
 B go to relative position -100 at 30 % speed
 move forward for 1 inches
-B go to relative position 0 at 30 % speed
+B go to relative position 0 at 30 % speed  # lift map reveal 
 move back for 5 inches
+set movement speed to 100 %
 move forward for 2 inches
 run Gyro Turn No Reset 50 0 60 >
 run Gyro Turn No Reset 0 5 60 =
 move back for 10.5 inches
 run Gyro Turn No Reset 0 10 0 <
 run Gyro Turn No Reset 5 0 0 =
-set movement speed to 50 %
 move back for 26 inches
+stop program
 
-B go to relative position -150 at 30 % speed
+move forward for 3 inches
+run Gyro Turn No Reset 5 0 60 =
 
 define Gyro Turn No Reset Left Wheel Speed Right Wheel Speed Degree Greater/Less
 start moving at Left Wheel Speed Right Wheel Speed % speed
