@@ -25,19 +25,18 @@ move forward for 8 inches
 run Gyro turn 50 0 -100 >
 run Gyro turn 0 5 -99 =
 move forward for 9 inches
-B go to relative position -180 at 40 % speed  # score mission 10
-wait .5 seconds
-B set speed to 30 %
-repeat until (F pressure in newton > 1)  # Lift all the way up to setup for run 3
-   B start motor clockwise
-B stop motor
+B go to relative position -190 at 40 % speed  # score mission 10
 move back for 5 inches
 run Gyro turn 50 0 -35 >
 set movement speed to 100 %
+B set speed to 30 %
+repeat until F is pressed
+   B start motor clockwise
+B stop motor
 move back for 32 inches
 stop program
 
-F is hardpressed
+wait .5 seconds
 
 define arm zero
 B set speed to 10 %
@@ -46,23 +45,13 @@ repeat until F is pressed
 B stop motor
 B set relative position to 0
 
-start moving at left wheel speed right wheel speed % speed
-if (>/</= = >) then
-   wait until (yaw angle > turn degrees)
-if (>/</= = <) then
-   wait until (yaw angle < turn degrees)
-if (>/</= = =) then
-   wait until (yaw angle = turn degrees)
-stop moving
-
-start moving at left wheel speed right wheel speed % speed
-if (>/</= = >) then
-   wait until (yaw angle > turn degrees)
-if (>/</= = <) then
-   wait until (yaw angle < turn degrees)
-if (>/</= = =) then
-   wait until (yaw angle = turn degrees)
-stop moving
-
 define Gyro turn left wheel speed right wheel speed turn degrees >/</=
+start moving at left wheel speed right wheel speed % speed
+if (>/</= = >) then
+   wait until (yaw angle > turn degrees)
+if (>/</= = <) then
+   wait until (yaw angle < turn degrees)
+if (>/</= = =) then
+   wait until (yaw angle = turn degrees)
+stop moving
 
