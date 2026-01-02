@@ -1,0 +1,40 @@
+move back for 3.5 inches
+run Gyro Turn No Reset 0 50 -30 <
+
+run Gyro Turn No Reset 0 50 -30 =
+
+run Gyro Turn No Reset 0 50 -30 <
+
+when program starts  # Red home start right wheel on the secound bold line from the right side of red home
+set yaw angle to 0  # NEW  #   #   #   #   #   #   #   #   #   #   # NEW  #   #   #   #   #   #   #   #   #   #   #   #   # NEW  #   #   #   #   #   #   #   #   #   #   #   # NEW  #   #   #   #   #   #   #   #   #   #   #   # NEW  #   #   #   #   #   #   #   #   #   # NEW  #   #   #   #   #   #   #   #   #   # NEW  #   #   #   #   #   #   #   #   #   #   #   # NEW
+set movement acceleration to 1000 1000
+set movement motors to AC
+set movement motors to 1 at stop
+set 1 motor rotation to 19.7 cm moved
+set movement speed to 100 %
+run arm zero
+move forward for 27 inches  # SCORE ONE SOIL DEPOSIT
+run Gyro Turn No Reset -30 0 -30 <
+run Gyro Turn No Reset 5 0 -30 =  # TURN TOWARD MISSION 3
+B go to relative position -130 at 20 % speed
+set movement speed to 50 %
+move forward for 6.6 inches
+B go to relative position 0 at 30 % speed
+
+define arm zero
+B set speed to 10 %
+repeat until F is pressed
+   B start motor clockwise
+B stop motor
+B set relative position to 0
+
+define Gyro Turn No Reset Left Wheel Speed Right Wheel Speed Degree Greater/Less
+start moving at Left Wheel Speed Right Wheel Speed % speed
+if (Greater/Less = >) then
+   wait until (yaw angle > Degree)
+if (Greater/Less = <) then
+   wait until (yaw angle < Degree)
+if (Greater/Less = =) then
+   wait until (yaw angle = Degree)
+stop moving
+
