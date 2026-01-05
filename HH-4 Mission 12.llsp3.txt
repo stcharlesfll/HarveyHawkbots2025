@@ -1,27 +1,35 @@
-when program starts  # Robot facing mission 4, front of robot on 3rd solid line from mission 4, arm all the way up
+when program starts  # Robot facing mission 4, front of robot on 2nd feighnt line from the side, arm all the way up
 set yaw angle to 0
 set movement motors to AC
 set movement speed to 50 %
 set 1 motor rotation to 19.7 cm moved
 run arm zero
-move forward for 13 inches
-B go to relative position -210 at 50 % speed
+move forward for 11 inches
+B go to relative position -210 at 50 % speed  # pull sand
 B set speed to 10 %
 B start motor counterclockwise
 wait 0.5 seconds
 move back for 2.5 inches
 B stop motor
-B go to relative position 0 at 100 % speed
+B go to relative position 0 at 80 % speed
 move back for 7 inches
-run Gyro Turn No Reset 5 50 -25 <
+run Gyro Turn No Reset 5 50 -25 <  # turn to ship push
 run Gyro Turn No Reset 5 0 -25 =
 move forward for 15 inches
 run Gyro Turn No Reset 50 5 1 >
 run Gyro Turn No Reset 0 5 1 =
-move forward for 5.5 inches
-move back for 10 inches
-run Gryo Turn 5 50 30
-move back for 20 inches
+move forward for 5.5 inches  # push ship push
+move back for 2 inches
+run Gyro Turn No Reset 0 50 -75 <
+run Gyro Turn No Reset 5 0 -75 =
+move back for 2.5 inches
+D set speed to 20 %
+D run clockwise for 0.5 seconds  # drop sand flag into ship area
+D run counterclockwise for 0.5 seconds
+move forward for 1 inches
+run Gyro Turn No Reset 20 0 -22 =
+set movement speed to 100 %
+move back for 27 inches  # Go to home
 stop program
 
 define Gyro Turn No Reset Left Wheel Speed Right Wheel Speed Degree Greater/Less

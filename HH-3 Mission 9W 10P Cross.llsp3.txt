@@ -10,7 +10,7 @@ D go to relative position 90 at 100 % speed
 move back for 16 inches  # backup is forward
 D set speed to 100 %
 repeat 4
-   D run counterclockwise for 80 degrees
+   D run counterclockwise for 80 degrees  # get the silo
    wait .2 seconds
    D run clockwise for 80 degrees
 move back for 5 inches
@@ -21,22 +21,31 @@ run Gryo Turn No Reset 50 5 87 >
 run Gryo Turn No Reset 0 5 87 =
 B go to relative position -190 at 100 % speed
 move forward for 4.5 inches
-run Gryo Turn No Reset 30 5 125 >
-run Gryo Turn No Reset 0 5 125 =
-move forward for 2.5 inches
-B go to relative position -90 at 100 % speed
-run Gryo Turn No Reset 50 5 138 >
-run Gryo Turn No Reset 0 5 138 =
-run Gryo Turn No Reset 5 30 130 >
+run Gryo Turn No Reset 30 5 120 >
+run Gryo Turn No Reset 0 5 120 =  # turn to statue
+move forward for 4 inches
+run Gryo Turn No Reset 5 0 123 =
+B go to relative position -10 at 100 % speed  # lift statue
+run Gryo Turn No Reset 20 5 138 =
 run arm zero
-move back for 3 inches
-run Gryo Turn No Reset 5 30 125 <
-run Gryo Turn No Reset 5 0 125 =
-D go to relative position 180 at 100 % speed
+run Gryo Turn No Reset 5 30 130 >
+move back for 5 inches
+run Gryo Turn No Reset 5 30 90 <
+run Gryo Turn No Reset 5 0 90 =
+move back for 5 inches
+D go to relative position 180 at 100 % speed  # Grab Pan
 wait .5 seconds
-run Gryo Turn No Reset 5 50 79 <
+run Gryo Turn No Reset 50 5 140 >
+run Gryo Turn No Reset 0 5 140 =  # wiggle pan out
+wait .5 seconds
+move back for 6.5 inches
+wait .5 seconds
+run Gryo Turn No Reset 5 50 90 <
+run Gryo Turn No Reset 5 0 90 =
 set movement speed to 100 %
-move forward for 39 inches  # go across to the other home
+move forward for 20 inches  # go to other home
+run Gryo Turn No Reset 5 50 70 <
+move forward for 20 inches
 stop program
 
 define arm zero
@@ -59,4 +68,7 @@ stop moving
 D start motor at 50 % power
 D set motor to 1 at stop
 D run clockwise for 110 degrees
+
+B set speed to 5 %
+B start motor clockwise
 
