@@ -17,7 +17,14 @@ B go to relative position -185 at 40 % speed
 wait .2 seconds
 move forward for 2 inches
 B go to relative position 15 at 20 % speed  # lift mission 7
-move back for 6.3 inches
+move back for 4 inches
+run Gyro turn 0 50 -90 <
+run Gyro turn 5 0 -92 =
+move forward for 4.25 inches
+B go to relative position -120 at 20 % speed
+wait 0.1 seconds
+B go to relative position 5 at 40 % speed
+
 run Gyro turn 0 50 -110 <
 run Gyro turn 5 0 -110 =
 move back for 16 inches
@@ -35,8 +42,6 @@ repeat until F is pressed
 B stop motor
 move back for 32 inches
 stop program
-
-wait .5 seconds
 
 define arm zero
 B set speed to 10 %
