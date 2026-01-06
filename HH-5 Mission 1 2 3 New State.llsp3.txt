@@ -1,5 +1,22 @@
 when program starts  # Red home start right wheel on the secound bold line from the right side of red home
-set yaw angle to 0  # NEW  #   #   #   #   #   #   #   #   #   #   # NEW  #   #   #   #   #   #   #   #   #   #   #   #   # NEW  #   #   #   #   #   #   #   #   #   #   #   # NEW  #   #   #   #   #   #   #   #   #   #   #   # NEW  #   #   #   #   #   #   #   #   #   # NEW  #   #   #   #   #   #   #   #   #   # NEW  #   #   #   #   #   #   #   #   #   #   #   # NEW
+set yaw angle to 0
+set movement acceleration to 1000 1000
+set movement motors to AC
+set movement motors to 1 at stop
+set 1 motor rotation to 19.7 cm moved
+set movement speed to 75 %
+run arm zero
+wait until is left button pressed ?
+move forward for 34 inches
+run Gyro Turn No Reset 20 0 90 >
+run Gyro Turn No Reset 0 5 90 =
+B go to relative position -190 at 75 % speed
+set movement speed to 10 %
+move forward for 4 inches
+B go to relative position -150 at 25 % speed
+wait .5 seconds
+move back for 6 inches
+
 set movement acceleration to 1000 1000
 set movement motors to AC
 set movement motors to 1 at stop
@@ -19,10 +36,13 @@ B go to relative position 0 at 50 % speed  # lift soil
 wait .5 seconds
 move back for 4 inches
 B go to relative position 0 at 50 % speed
-run Gyro Turn No Reset 0 -50 45 >
-run Gyro Turn No Reset -5 0 45 =
-move back for 2 inches
-run Gyro Turn No Reset -50 0 0 <  # second hit on brush 
+run Gyro Turn No Reset 0 -50 40 >
+run Gyro Turn No Reset -5 0 40 =
+set movement speed to 100 %
+move back for 2.5 inches
+run Gyro Turn No Reset -50 0 5 <  # second hit on brush 
+move back for 26 inches
+
 run Gyro Turn No Reset 50 12 90 >
 run Gyro Turn No Reset 0  5 90 =
 move forward for 2 inches
@@ -70,9 +90,6 @@ if (Greater/Less = <) then
 if (Greater/Less = =) then
    wait until (yaw angle = Degree)
 stop moving
-
-set movement speed to 30 %
-move forward for 2.5 inches
 
 set yaw angle to 0
 set movement acceleration to 1000 1000
