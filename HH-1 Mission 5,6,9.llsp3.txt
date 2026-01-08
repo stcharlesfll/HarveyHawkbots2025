@@ -21,27 +21,25 @@ move back for 4 inches
 run Gyro turn 0 50 -90 <
 run Gyro turn 5 0 -92 =
 move forward for 4.25 inches
-B go to relative position -120 at 20 % speed
+B go to relative position -130 at 20 % speed
 wait 0.1 seconds
-B go to relative position 5 at 40 % speed
-
-run Gyro turn 0 50 -110 <
-run Gyro turn 5 0 -110 =
-move back for 16 inches
-move forward for 8 inches
-run Gyro turn 50 0 -100 >
-run Gyro turn 0 5 -99 =
-move forward for 9 inches
-B go to relative position -190 at 40 % speed  # score mission 10
-move back for 5 inches
-run Gyro turn 50 0 -35 >
-set movement speed to 100 %
-B set speed to 30 %
-repeat until F is pressed
-   B start motor clockwise
-B stop motor
-move back for 32 inches
-stop program
+B go to relative position 0 at 25 % speed
+move back for 2 inches
+run Gyro turn 50 0 -40 >
+run Gyro turn 0 5 -40 =
+run Gyro turn 0 50 -80 <
+run Gyro turn 5 0 -80 =
+move forward for 3.5 inches
+run Gyro turn 28 0 -45 >
+run Gyro turn 0 5 -45 =
+set movement speed to 80 %
+move back for 9.5 inches
+move forward for 4 inches
+run Gyro turn 0 50 -70 <
+run Gyro turn 5 0 -70 =
+move back for 11 inches
+run Gyro turn 50 0 -30 >
+move back for 30 inches
 
 define arm zero
 B set speed to 10 %
