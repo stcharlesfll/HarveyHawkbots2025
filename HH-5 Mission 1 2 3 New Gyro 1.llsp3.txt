@@ -1,16 +1,6 @@
-when program starts  # Red home start right wheel on the secound bold line from the right side of red home
-set yaw angle to 0
-set movement acceleration to 1000 1000
-set movement motors to AC
-set movement motors to 1 at stop
-set 1 motor rotation to 19.7 cm moved
-set movement speed to 100 %
-run arm zero
-B set speed to 6 %
-B start motor counterclockwise
-move forward for 27 inches  # SCORE ONE SOIL DEPOSIT 
 run Gyro Turn No Reset 50 0 67 >
 run Gyro Turn No Reset 0 5 67 =  # TURN TOWARD MISSION 3 
+
 B go to relative position -200 at 15 % speed
 B stop motor
 set movement speed to 50 %
@@ -86,4 +76,16 @@ repeat until F is pressed
    B start motor clockwise
 B stop motor
 B set relative position to 0
+
+when program starts  # Red home start right wheel on the secound bold line from the right side of red home
+set yaw angle to 0
+set movement acceleration to 1000 1000
+set movement motors to AC
+set movement motors to 1 at stop
+set 1 motor rotation to 19.7 cm moved
+set movement speed to 100 %
+run arm zero
+B set speed to 6 %
+B start motor counterclockwise
+move forward for 27 inches  # SCORE ONE SOIL DEPOSIT 
 
