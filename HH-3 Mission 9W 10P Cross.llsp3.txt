@@ -21,8 +21,8 @@ run Gryo Turn No Reset 50 5 87 >
 run Gryo Turn No Reset 0 5 87 =
 B go to relative position -190 at 100 % speed
 move forward for 4.5 inches
-run Gryo Turn No Reset 30 5 120 >
-run Gryo Turn No Reset 0 5 120 =  # turn to statue
+run Gryo Turn No Reset 30 5 121 >
+run Gryo Turn No Reset 0 5 121 =  # turn to statue
 move forward for 4 inches
 run Gryo Turn No Reset 5 0 123 =
 B go to relative position -10 at 100 % speed  # lift statue

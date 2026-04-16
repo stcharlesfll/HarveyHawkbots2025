@@ -1,0 +1,49 @@
+define arm zero
+B set speed to 10 %
+repeat until F is pressed
+   B start motor clockwise
+B stop motor
+B set relative position to 0
+
+when program starts  # Red home start right wheel on the secound bold line from the right side of red home
+set yaw angle to 0
+set movement acceleration to 1000 1000
+set movement motors to AC
+set movement motors to 1 at stop
+set 1 motor rotation to 19.7 cm moved
+set movement speed to 75 %
+run arm zero
+move forward for 31.4 inches
+run Gyro Turn No Reset 20 5 90 >  # Turn to mine shaft
+run Gyro Turn No Reset 0 5 90 =
+move back for 1 inches
+B go to relative position -185 at 50 % speed
+set movement speed to 10 %
+move forward for 4.5 inches  # drive under mine cart   # 6
+B go to relative position -200 at 10 % speed
+move forward for 1.4 inches
+B go to relative position -161 at 25 % speed
+wait .5 seconds
+move back for 6.5 inches
+B go to relative position -190 at 10 % speed  # -185 @ 10% lift artifact 
+run Gyro Turn No Reset 0 5 82 =  # 85 degree
+move forward for 1.7 inches
+B go to relative position -100 at 50 % speed
+move forward for 1 inches  # 1 in
+B go to relative position -75 at 100 % speed
+wait .5 seconds
+run Gyro Turn No Reset -30 0 20 <  # turn tored home 
+set movement speed to 100 %
+move back for 34 inches
+stop program
+
+define Gyro Turn No Reset Left Wheel Speed Right Wheel Speed Degree Greater/Less
+start moving at Left Wheel Speed Right Wheel Speed % speed
+if (Greater/Less = >) then
+   wait until (yaw angle > Degree)
+if (Greater/Less = <) then
+   wait until (yaw angle < Degree)
+if (Greater/Less = =) then
+   wait until (yaw angle = Degree)
+stop moving
+
