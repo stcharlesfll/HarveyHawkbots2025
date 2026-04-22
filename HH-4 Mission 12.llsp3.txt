@@ -15,10 +15,10 @@ B go to relative position 0 at 80 % speed
 move back for 7 inches
 run Gyro Turn No Reset 5 50 -27 <  # turn to ship push
 run Gyro Turn No Reset 5 0 -27 =
-move forward for 15 inches
+move forward for 14 inches
 run Gyro Turn No Reset 50 5 0 >
 run Gyro Turn No Reset 0 5 0 =
-move forward for 5.5 inches  # push ship push
+move forward for 6 inches  # push ship push
 move back for 2 inches
 run Gyro Turn No Reset 0 50 -75 <
 run Gyro Turn No Reset 5 0 -75 =
