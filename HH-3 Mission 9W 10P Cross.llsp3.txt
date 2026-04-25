@@ -9,7 +9,7 @@ set 1 motor rotation to 19.7 cm moved
 D go to relative position 90 at 100 % speed
 move back for 14 inches  # backup is forward
 D set speed to 100 %
-repeat 4
+repeat 3
    D run counterclockwise for 80 degrees  # get the silo
    wait .2 seconds
    D run clockwise for 80 degrees
@@ -36,7 +36,7 @@ move back for 5 inches
 D go to relative position 180 at 100 % speed  # Grab Pan
 wait .5 seconds
 run Gryo Turn No Reset 50 5 140 >
-run Gryo Turn No Reset 0 5 140 =  # wiggle pan out
+run Gryo Turn No Reset 0 5 140 =  # take pan out
 wait .5 seconds
 move back for 6.5 inches
 wait .5 seconds

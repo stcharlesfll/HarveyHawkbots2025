@@ -22,10 +22,10 @@ set movement speed to 10 %
 move forward for 4.5 inches  # drive under mine cart   # 6
 B go to relative position -200 at 10 % speed
 move forward for 1.4 inches
-B go to relative position -161 at 25 % speed
+B go to relative position -161 at 25 % speed  # What if we changed to somewhere around -165 or -170?
 wait .5 seconds
 move back for 6.5 inches
-B go to relative position -190 at 10 % speed  # -185 @ 10% lift artifact 
+B go to relative position -190 at 10 % speed  # -185 @ 10% lift artifact
 run Gyro Turn No Reset 0 5 82 =  # 85 degree
 move forward for 1.7 inches
 B go to relative position -100 at 50 % speed
