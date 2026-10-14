@@ -1,0 +1,36 @@
+name: Extract SVG and TXT files from llsp3 files
+
+on:
+  push:
+    paths:
+      - '**/*.llsp3'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 2
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+      - name: Run flippertools
+        run: |
+          cd /home/runner/work
+          git clone https://github.com/astrospark/flippertools.git 
+          export FLIPPER_PATH=/home/runner/work/flippertools
+          cd $GITHUB_WORKSPACE
+          echo "Running flipper2text"
+          pip install -r "${FLIPPER_PATH}/requirements.txt"
+          git diff --name-only HEAD~ | grep ".llsp3$" | while read line ; do python3 ${FLIPPER_PATH}/flipper2text.py -f "${line}" "${line}.txt" ; python3 ${FLIPPER_PATH}/flipper2svg.py -f "${line}" "${line}.svg" ; done
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit --amend --no-edit
+          git push -f
